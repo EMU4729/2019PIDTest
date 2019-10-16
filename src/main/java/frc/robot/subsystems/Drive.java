@@ -7,8 +7,11 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import frc.robot.RobotMap;
 
 /**
@@ -33,10 +36,12 @@ public class Drive extends Subsystem {
     rightMotorMaster = new TalonSRX(RobotMap.RIGHTMOTORMASTER);
     rightMotorSlave = new TalonSRX(RobotMap.RIGHTMOTORSLAVE);
 
-    leftMotorSlave.changeControlMode(CANTalon.ControlMode.leftMotorMaster);
-    leftMotorSlave.Set(leftMotorMaster.getDeviceID());
-    rightMotorSlave.changeControlMode(CANTalon.ControlMode.rightMotorMaster);
-    rightMotorSlave.set(rightMotorMaster.getDeviceID());
-    
+    leftMotorSlave.set(ControlMode.Follower, RobotMap.LEFTMOTORMASTER);
+    rightMotorSlave.set(ControlMode.Follower, RobotMap.RIGHTMOTORMASTER);
+  }
+
+  public void tankDrive(double leftSpeed, double rightSpeed) {
+    leftMotorMaster.set(ControlMode.PercentOutput, leftSpeed);
+    rightMotorMaster.set(ControlMode.PercentOutput, rightSpeed);
   }
 }

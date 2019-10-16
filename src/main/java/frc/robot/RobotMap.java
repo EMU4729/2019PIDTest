@@ -29,5 +29,6 @@ public class RobotMap {
   public static int RIGHTMOTORMASTER = 3;
   public static int RIGHTMOTORSLAVE = 4;
 
-  
+  public static int LEFTJOYSTICKAXIS = 1;
+  public static int RIGHTJOYSTICKAXIS = 5;
 }
