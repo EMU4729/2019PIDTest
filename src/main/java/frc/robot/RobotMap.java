@@ -24,11 +24,20 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static int LEFTMOTORMASTER = 1;
-  public static int LEFTMOTORSLAVE = 2;
-  public static int RIGHTMOTORMASTER = 3;
-  public static int RIGHTMOTORSLAVE = 4;
+  public static int LEFTMOTORMASTER = 4;
+  public static int LEFTMOTORSLAVE = 3;
+  public static int RIGHTMOTORMASTER = 2;
+  public static int RIGHTMOTORSLAVE = 1;
 
-  public static int LEFTJOYSTICKAXIS = 1;
-  public static int RIGHTJOYSTICKAXIS = 5;
+  public static int LEFT_JOYSTICK_Y_AXIS = 1;
+  public static int RIGHT_JOYSTICK_Y_AXIS = 5;
+  public static int LEFT_JOYSTICK_X_AXIS = 0;
+  public static int RIGHT_JOYSTICK_X_AXIS = 4;
+
+  public static final int KPID_LOOP_IDX = 0;
+
+  public static final double kP = 1;
+	public static final double kI = 2;
+	public static final double kD = 3;
+	public static final double kF = 4;
 }

@@ -11,13 +11,11 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.subsystems.Drive;
 
-
-public class Tank extends Command {
+public class Arcade extends Command {
   Joystick joystick;
 
-  public Tank(Joystick joystick) {
+  public Arcade(Joystick joystick) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
 
@@ -34,7 +32,7 @@ public class Tank extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Robot.drive.tankDrive(joystick.getRawAxis(RobotMap.LEFTJOYSTICKAXIS),joystick.getRawAxis(RobotMap.RIGHTJOYSTICKAXIS));
+    Robot.drive.arcade(joystick.getRawAxis(RobotMap.RIGHT_JOYSTICK_X_AXIS),joystick.getRawAxis(RobotMap.LEFT_JOYSTICK_Y_AXIS));
   }
 
   // Make this return true when this Command no longer needs to run execute()

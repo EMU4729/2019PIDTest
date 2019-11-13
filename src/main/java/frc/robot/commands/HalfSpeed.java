@@ -7,23 +7,14 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
-import frc.robot.subsystems.Drive;
 
-
-public class Tank extends Command {
-  Joystick joystick;
-
-  public Tank(Joystick joystick) {
+public class HalfSpeed extends Command {
+  public HalfSpeed() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-
     requires(Robot.drive);
-
-    this.joystick = joystick;
   }
 
   // Called just before this Command runs the first time
@@ -34,7 +25,7 @@ public class Tank extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Robot.drive.tankDrive(joystick.getRawAxis(RobotMap.LEFTJOYSTICKAXIS),joystick.getRawAxis(RobotMap.RIGHTJOYSTICKAXIS));
+    Robot.drive.arcade(0.5,0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -52,5 +43,6 @@ public class Tank extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.drive.arcade(0, 0);
   }
 }

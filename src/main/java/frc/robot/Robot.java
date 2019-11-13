@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.Arcade;
 import frc.robot.commands.Tank;
 import frc.robot.subsystems.Drive;
 
@@ -111,7 +112,7 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    new Tank(new Joystick(0)).start();
+    new Arcade(new Joystick(0)).start();
   }
 
   /**
