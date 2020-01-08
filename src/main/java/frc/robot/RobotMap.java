@@ -36,8 +36,8 @@ public class RobotMap {
 
   public static final int KPID_LOOP_IDX = 0;
 
-  public static final double kP = 1;
-	public static final double kI = 2;
-	public static final double kD = 3;
-	public static final double kF = 4;
+  public static final double kP = 0.2;
+	public static final double kI = 0;
+	public static final double kD = 0.2;
+	public static final double kF = 0;
 }

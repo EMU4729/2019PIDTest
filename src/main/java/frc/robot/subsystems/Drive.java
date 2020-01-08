@@ -60,8 +60,6 @@ public class Drive extends Subsystem {
   public void tankDrive(double leftSpeed, double rightSpeed) {
     leftMotorMaster.set(ControlMode.PercentOutput, leftSpeed);
     rightMotorMaster.set(ControlMode.PercentOutput, rightSpeed);
-    SmartDashboard.putNumber("left motor speed", leftMotorMaster.getMotorOutputPercent());
-    SmartDashboard.putNumber("right motor speed", rightMotorMaster.getMotorOutputPercent());
   }
 
   public void arcade(double speed, double turn) {
@@ -84,9 +82,11 @@ public class Drive extends Subsystem {
   }
 
   public void setupPid(TalonSRX motor) {
+    motor.selectProfileSlot(0, 0);
     motor.config_kP(RobotMap.KPID_LOOP_IDX, RobotMap.kP);
     motor.config_kI(RobotMap.KPID_LOOP_IDX, RobotMap.kI);
     motor.config_kD(RobotMap.KPID_LOOP_IDX, RobotMap.kD);
     motor.config_kF(RobotMap.KPID_LOOP_IDX, RobotMap.kF);
+    motor.configClosedloopRamp(5);
   }
 }

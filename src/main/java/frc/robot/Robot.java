@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -32,6 +34,7 @@ public class Robot extends TimedRobot {
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -53,7 +56,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    // pid testing
 
+    SmartDashboard.putNumber("left motor speed", drive.leftMotorMaster.getMotorOutputPercent());
+    SmartDashboard.putNumber("right motor speed", drive.rightMotorMaster.getMotorOutputPercent());
   }
 
   /**
